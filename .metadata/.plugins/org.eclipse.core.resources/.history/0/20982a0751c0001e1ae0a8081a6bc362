@@ -1,0 +1,8 @@
+package dataDriven;
+
+import org.testng.annotations.BeforeMethod;
+
+public class PrimusBank_Login_TC_TestNG {
+
+	@BeforeMethod
+}

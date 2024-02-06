@@ -1,0 +1,16 @@
+package testNG;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.BeforeMethod;
+
+public class PrimusBank_Login_TC_TestNG {
+	
+	WebDriver driver = null;
+
+	@BeforeMethod
+	public void Launch(){
+		System.setProperty("webdriver.gecko.driver", "D:\\BarghavaRecordings\\Jars\\geckodriver.exe");
+		driver = new FirefoxDriver();
+	}
+}

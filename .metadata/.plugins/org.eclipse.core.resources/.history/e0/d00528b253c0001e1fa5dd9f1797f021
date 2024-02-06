@@ -1,0 +1,28 @@
+package testNG;
+
+import java.io.FileInputStream;
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.BeforeClass;
+
+import functionDriven.Genericmethods;
+
+public class TestNGMaster extends Genericmethods {
+	public FileInputStream fi;
+	public Properties pr;
+	public String url = "http://orangehrm.qedgetech.com";
+	public String expval, actval;
+	
+	@BeforeClass
+	public void orgLaunch(){
+		expval = "LOGIN";
+		brlaunch(br, url);
+		
+		fi = new FileInputStream("D:\\BarghavaRecordings\\Workspace1\\SeleniumPractice\\src\\properties\\orgHRM.properties");
+		pr = new Properties();
+		pr.load(fi);
+		
+		actval = driver.findElement(By.id(pr.getProperty("login"))).getAttribute("value");
+	}
+}
